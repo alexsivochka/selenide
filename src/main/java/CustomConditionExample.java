@@ -27,8 +27,10 @@ public class CustomConditionExample {
     public void customConditionTest(){
         open("http://the-internet.herokuapp.com");
         SelenideElement block = $x("//h1");
-        block.shouldHave(css("font-size", "44px"));
+        // По умолчанию размер шрифта в браузерах равен 16px.
+        block.shouldHave(css("font-size", "44px")); // в нашем случае 2.75em = 44рх
         block.shouldHave(css("font-style", "normal"));
+        sleep(10000);
     }
 
 }

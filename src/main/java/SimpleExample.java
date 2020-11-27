@@ -8,7 +8,7 @@ public class SimpleExample {
     @Test
     public void simpleTest(){
         open("https://privatbank.ua/");
-        $(".standart-logo").shouldBe(Condition.visible);
+        $(".standart-logo").waitUntil(Condition.visible, 8000);
         $$("ul.divide a")
                 .shouldHaveSize(4)
                 .shouldHave(CollectionCondition.textsInAnyOrder(

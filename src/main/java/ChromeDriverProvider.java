@@ -26,7 +26,6 @@ public class ChromeDriverProvider implements WebDriverProvider {
         chromePrefs.put("download.default_directory", System.getProperty("user.dir"));
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-infobars");
         options.setExperimentalOption("prefs", chromePrefs);
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
         options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -34,9 +33,6 @@ public class ChromeDriverProvider implements WebDriverProvider {
         options.addExtensions(listExtensions());
 
         ChromeDriver driver = new ChromeDriver(options);
-
-//        System.setProperty("browser", options.getBrowserName() + " " + driver.getCapabilities().getVersion());
-//        System.setProperty("driver.version", WebDriverManager.chromedriver().getDownloadedDriverVersion());
 
         return driver;
     }

@@ -35,7 +35,6 @@ public class CustomCommandExample {
         open("https://jqueryui.com/slider/#slider-vertical");
         switchTo().frame(0);
         SelenideElement slider = $("#slider-vertical");
-        sleep(5000);
         slider
                 .execute(setSliderValue(44));
         sleep(5000);

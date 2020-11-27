@@ -33,16 +33,15 @@ public class UploadDownloadExample {
         $("#file-submit").shouldBe(visible, enabled).click();
         $x("//h3").should(appear).shouldHave(text("File Uploaded!"));
         $("div#uploaded-files").shouldBe(visible).shouldHave(text(file.getName()));
+        sleep(10000);
     }
 
     @Test
     public void downloadFileTest() throws IOException {
-        open("https://www.google.com/");
-        String query = "Пример PDF файла";
-        $(By.name("q")).setValue(query).pressEnter();
-        $$x("//*[text=('')]").filterBy(visible).first().click();
-        File file = $("a[href$='People.txt']").download();
+        open("http://the-internet.herokuapp.com/download");
+        File file = $("a[href$='upload.txt']").download();
         Stream<String> stream = Files.lines(Paths.get(file.getPath()));
         stream.forEach(System.out::println);
     }
 }
+

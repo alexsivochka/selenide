@@ -25,7 +25,7 @@ public class JavaScriptExecutingExample {
         open("https://jqueryui.com/datepicker/");
         switchTo().frame(0);
         $("input#datepicker").shouldBe(visible, enabled).click();
-        setDate(2020, 9, 3);
+        setDate(2020, 9, 3); // нумерация месяца начинается с 0, т.е. фактически мы устанавливаем октябрь
         sleep(8000);
     }
 

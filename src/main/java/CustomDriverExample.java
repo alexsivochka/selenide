@@ -17,7 +17,7 @@ public class CustomDriverExample {
     @BeforeClass
     public void setUp(){
         Configuration.startMaximized = true;
-        Configuration.timeout = 8000;
+        Configuration.timeout = 10000;
         Configuration.browser = ChromeDriverProvider.class.getName();
     }
 

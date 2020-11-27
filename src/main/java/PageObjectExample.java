@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class PageObjectExample {
 
     HeaderPage headerPage = new HeaderPage();
-    LoginPage loginPage = new LoginPage();
 
     @BeforeClass
     public void setUp(){

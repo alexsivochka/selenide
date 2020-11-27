@@ -22,7 +22,7 @@ public class ActionsExample {
         open("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_radio");
         switchTo().frame(0);
         $("[name='gender']").selectRadio("female");
-        sleep(5000);
+        sleep(10000);
 
     }
 
@@ -34,6 +34,7 @@ public class ActionsExample {
         SelenideElement elementToDrop = $("div#droppable");
         elementToDrag.dragAndDropTo(elementToDrop);
         elementToDrop.shouldHave(Condition.text("Dropped!"));
+        sleep(10000);
     }
 
 }
